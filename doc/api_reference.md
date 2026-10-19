@@ -1348,6 +1348,10 @@ destroyed before the stop-source is destructed.
 This is a less-safe but more efficient version of `std::stop_token`
 proposed in [P0660R10](https://wg21.link/P0660R10).
 
+Unlike `std::stop_source::request_stop()`,
+`inplace_stop_source::request_stop()` returns `false` if this call made
+the stop request and `true` if stop was already requested.
+
 
 ## Synchronisation Primitives
 

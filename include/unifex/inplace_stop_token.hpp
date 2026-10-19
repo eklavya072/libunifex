@@ -94,6 +94,8 @@ public:
   inplace_stop_source& operator=(inplace_stop_source&&) = delete;
   inplace_stop_source& operator=(const inplace_stop_source&) = delete;
 
+  // Returns false if this call made the stop request, true if stop was
+  // already requested (the opposite of std::stop_source::request_stop()).
   bool request_stop() noexcept;
 
   inplace_stop_token get_token() noexcept;
